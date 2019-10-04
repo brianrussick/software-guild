@@ -1,0 +1,8 @@
+York Peppermint::0.75::3::
+Snickers::1.50::5::
+100 Grand Bar::1.75::4::
+Starburst::1.55::2::
+Butterfinger::3::15::
+Mars Bar::2.25::8::
+Swedish Fish::1.50::9::
+Toblerone::2.75::7::
