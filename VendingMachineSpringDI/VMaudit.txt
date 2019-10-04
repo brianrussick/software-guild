@@ -1,0 +1,5 @@
+2019-10-04T15:33:07.947 : buyCandyInventorycom.sg.vendingmachine.service.InsufficientFundsException: YOU NEED MORE MONEY FOR THAT CANDY!: Candy : Starburst : Money inserted : 0.50
+2019-10-04T15:33:46.026 : getCandyInventorycom.sg.vendingmachine.service.NoItemInventoryException: UNABLE TO LOCATE CANDY IN INVENTORY!: Milky Way
+2019-10-04T15:33:50.645 : buyCandyInventorycom.sg.vendingmachine.service.InsufficientFundsException: YOU NEED MORE MONEY FOR THAT CANDY!: Candy : Toblerone : Money inserted : 0.85
+2019-10-04T15:39:33.456 : buyCandyInventorycom.sg.vendingmachine.service.InsufficientFundsException: YOU NEED MORE MONEY FOR THAT CANDY!: Candy : Butterfinger : Money inserted : 1.25
+2019-10-04T15:40:03.459 : getCandyInventorycom.sg.vendingmachine.service.NoItemInventoryException: UNABLE TO LOCATE CANDY IN INVENTORY!: Sour straws
