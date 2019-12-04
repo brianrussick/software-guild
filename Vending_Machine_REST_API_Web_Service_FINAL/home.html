@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <title>Vending Machine</title>
+</head>
+
+<body>
+    <!-- overwrites the default background style applied by Bootstrap -->
+    <style type="text/css">
+    body {background:#40E0D0!important;}
+    </style>
+    <div class="container">
+        <h1 class="text-center">Vending Machine</h1>
+        <hr/>
+    <div class="col-lg-9">
+
+    <!-- adds vending items with divs equally spaced 3 x 3 boxes -->
+    <div id="snacks" style="list-style-type:none;margin-top:1px;margin-bottom:0.25px;">
+    </div>
+    </div>
+
+    <!-- sets formatting for the right side panel -->
+    <div class="col-lg-3">
+
+    <!-- total $ In section -->
+    <div class="row">
+        <h2 class="text-center">Total $ In</h2>
+            <form role="form" id="total-money-in-form" class="form-horizontal">
+        <div class="form-group">
+        <div class="col-lg-offset-3 col-lg-6">
+            <input type="text"
+                   class="form-control"
+                   id="total-money-in"
+                   value=0
+                   name="Total $ In">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button"
+                    class="btn btn-default col-lg-5 "
+                    id="dollar-button"
+                    onclick="userPicksDollar()">
+                    Add Dollar
+            </button>
+            <button type="button"
+                    class="btn btn-default col-lg-offset-2 col-lg-5"
+                    id="quarter-button"
+                    onclick="userPicksQuarter()">
+                    Add Quarter
+            </button>
+        </div>
+        <div class="form-group">
+            <button type="button"
+                    class="btn btn-default col-lg-5"
+                    id="dime-button"
+                    onclick="userPicksDime()">
+                    Add Dime
+            </button>
+            <button type="button"
+                    class="btn btn-default col-lg-offset-2 col-lg-5"
+                    id="nickel-button"
+                    onclick="userPicksNickel()">
+                    Add Nickel
+            </button>
+        </div>
+            </form>
+        </div>
+            <hr/>
+
+        <!-- purchase snacks & msgs form-->
+        <div class="row">
+            <h2 class="text-center">Messages</h2>
+                <form role="form" id="msg-form" class="form">
+            <div class="row form-group">
+            <div class="col-lg-12">
+                <input type="text" class="form-control" id="msg-display"/>
+            </div>
+            </div>
+        <div class="row form-group">
+            <label for="chosen-snacks" class="control-label col-lg-2"><h3 style="display:inline">Item: </h3></label>
+        <div class="col-lg-7 col-lg-offset-3">
+            <input type="text"
+                   class="form-control"
+                   id="chosen-snacks"
+                   name="" required/>
+                        </div>
+                    </div>
+                <div class="row form-group">
+                    <button type="button"
+                            class="btn btn-default col-lg-offset-2 col-lg-8"
+                            id="purchase-snack"
+                            onclick="purchaseSnack()">
+                            Make Purchase
+                    </button>
+                </div>
+                    </form>
+                </div>
+                    <hr/>
+
+                <!-- change display & form -->
+                <div class="row">
+                    <h2 class="text-center">Change</h2>
+                        <form role="form" id="snacks-change-form">
+                    <div class="row form-group">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <input type="text" class="form-control" id="snacks-change-display"/>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <button type="button"
+                                class="btn btn-default col-lg-offset-3 col-lg-6"
+                                id="snacks-change-return"
+                                onclick="snacksChgRtn()">
+                                Change Return
+                        </button>
+                    </div>
+                        </form>
+                    </div>
+              </div>
+        </div>
+
+    <!-- scripts to implement -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/home.js"></script>
+
+</body>
+</html>
