@@ -1,0 +1,51 @@
+  DROP DATABASE IF EXISTS SuperHeroSightings;
+  CREATE DATABASE SuperHeroSightings;
+  USE SuperHeroSightings;
+
+  CREATE TABLE SuperHVs
+  (SuperHVId INT PRIMARY KEY AUTO_INCREMENT,
+  Name VARCHAR(50) NOT NULL,
+  Description VARCHAR(50) NULL,
+  Image VARCHAR(255));
+
+  CREATE TABLE Powers
+  (SuperPowerId INT PRIMARY KEY AUTO_INCREMENT,
+  Name VARCHAR(50) NOT NULL,
+  Description VARCHAR(50) NULL);
+
+  CREATE TABLE SuperPowers
+  (SuperHVId INT NOT NULL,
+  SuperPowerId INT NOT NULL,
+  PRIMARY KEY (SuperHVId, SuperPowerId),
+  FOREIGN KEY (SuperHVId) REFERENCES SuperHVs (SuperHVId),
+  FOREIGN KEY (SuperPowerId) REFERENCES Powers (SuperPowerId));
+
+  CREATE TABLE Orgs
+  (OrgId INT PRIMARY KEY AUTO_INCREMENT,
+  Name VARCHAR(50) NOT NULL,
+  Description VARCHAR(50) NULL,
+  Address VARCHAR(50) NULL,
+  PhoneNumber VARCHAR(30) NULL);
+
+  CREATE TABLE SuperOrgs
+  (SuperHVId INT NOT NULL,
+  OrgId INT NOT NULL,
+  PRIMARY KEY (SuperHVId, OrgId),
+  FOREIGN KEY (SuperHVId) REFERENCES SuperHVs (SuperHVId),
+  FOREIGN KEY (OrgId) REFERENCES Orgs (OrgId));
+
+  CREATE TABLE Locations
+  (LocaId INT PRIMARY KEY AUTO_INCREMENT,
+  Name VARCHAR (50) NOT NULL,
+  Description VARCHAR (50) NULL,
+  Address VARCHAR(50) NOT NULL,
+  Latitude DOUBLE NOT NULL,
+  Longitude DOUBLE NOT NULL);
+
+  CREATE TABLE Sightings
+  (SightingId INT PRIMARY KEY AUTO_INCREMENT,
+  Date DATE NOT NULL,
+  SuperHVId INT NOT NULL,
+  LocaId INT NOT NULL,
+  FOREIGN KEY (SuperHVId) REFERENCES SuperHVs (SuperHVId),
+  FOREIGN KEY (LocaId) REFERENCES Locations (LocaId));
