@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BTBB Admin Panel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <style>
+        .navbar {
+            float: right;
+            margin-top: -60px;
+        }
+        .approvePost {
+            font-size: 50px;
+            color: #17e28d;
+            position: absolute;
+            right: 25px;          
+        }
+        .deletePost{
+            font-size: 50px;
+            color: #f21d1d;          
+            position: absolute;
+            right: 25px;
+            margin-top: 100px;           
+        }
+        .deleteUser{
+            font-size: 50px;
+            position: absolute;        
+            right: 25px;           
+            color: #f21d1d;;
+            margin-top: 50px; 
+        }
+        h2, h3 {
+            text-align: center;
+            border: 5px black;
+        }
+        .row {
+            margin: 0px;
+            border: 5px;
+            width: 100%;         
+        }
+        .col {
+            margin: 5px;
+            padding: 5px;
+            border: 5px solid;
+            position: relative;
+        }      
+    </style>
+</head>
+        <body style="background-color: white; color: #337ab7; text-shadow: none">
+    <div>
+        <h1 style="margin-bottom: 12px;font-family: fantasy;">ADMIN PANEL</h1>
+    <!-- insert navigation bar from navTabs.js -->
+    <div id='navTabs' class='navbar' style="text-shadow: none">
+    </div>
+        <hr style="color: #337ab7; margin-top: -12px;">
+    </div>
+    <!-- blog user display -->
+    <div id="users">
+    <div class='row'>
+    <div class='col'>
+        <h3>Displaying Blog Users</h3>
+    </div>
+    </div>
+    <!-- display all blog users-->
+    <div id='allUsers' class='row'>   
+    </div>
+    </div>
+    <br><br>
+    <!-- container div -->
+    <div class="container">
+    <!-- Posts awaiting Approval -->
+    <h3>Blog Posts Pending Admin Approval</h3>
+    <div id='unapprovedPostsDivBlock' class='row'>
+    </div>
+    </div>
+        <b>-- Benny the Baker Blog © 2020 --</b>
+<script src="css/bootstrap.css"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/adminPanel.js"></script>
+<script src='js/navTabs.js'></script>
+</body>
+</html>

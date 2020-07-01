@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BTBB New Post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap-grid.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">   
+    <style> 
+        .navbar {
+            float: right;
+            margin-top: -60px;
+            font-size: 14px;
+        }
+        .row {
+            width: 85%;
+        }
+    </style>
+</head>
+<body style="background-color: white; color: #337ab7; text-shadow: none">
+    <div>
+        <h1 style="margin-bottom: 12px; font-family: fantasy;">BENNY THE BAKER BLOG</h1>
+    <!-- insert navigation bar from navTabs.js -->
+    <div id='navTabs' class='navbar' style="text-shadow: none">
+    </div>
+        <hr style="color: #337ab7; margin-top: -12px;">
+    </div>
+    <!-- container div -->
+    <div class="container">
+        <br><br>
+        <form name="myform" method="Post" action="createnewpost" onsubmit="return validateform()">
+    <div class='row form-group'>
+    <div class='col leftSide'>
+        <label>Blog Title</label>
+    </div>
+    <div class='col rightSide'>
+        <input type="text" 
+               maxlength="75" 
+               name='blogTitle' 
+               class='form-control'
+               placeholder='Blog title goes here!'
+               required/>
+
+        </div>
+    </div>
+    <div class='row form-group'>
+    <div class='col leftSide'>
+        <label>Date</label>
+    </div>
+    <div id='date' class='col rightSide'>
+        <input name='date' 
+               id="dateSelector"
+               type='date' 
+               class='form-control'
+               required/>
+        </div>
+    </div>
+    <div class='row form-group'>
+    <div class='col leftSide'>
+        <label>Picture Snapshot URL</label>
+    </div>
+    <div class='col rightSide'>
+        <input type="text" 
+               maxlength="400" 
+               name='thumbnail' 
+               class='form-control'
+               placeholder='IMG URL'
+        required/>
+        </div>
+    </div>
+    <div class='row form-group'>
+    <div class='col leftSide'>
+        <label>Tags</label>
+    </div>
+    <div class='col rightSide'>
+        <input type="text" 
+               maxlength="50" 
+               name='tag' 
+               id='tags' 
+               class='form-control'
+               placeholder='#tag #tag2 #tag3'
+        required/>
+        </div>
+    </div>
+    <!-- insert tinyMCE form -->
+    <div class='row'>
+    <div class='col'>
+        <textarea name='postHtml' id="tinyMCETextArea" required></textarea>
+    </div>
+    </div>
+    <div class='row form-group'>
+    <div id='submit-button' class='col'>
+        <button class='btn btn-primary' 
+                onclick="createPost()" 
+                style="margin-left:35%; 
+                       margin-top: 35px;">
+                Submit Post (Admin MUST Approve)
+            </button>
+        </div>
+    </div>
+    </form>
+    </div>
+        <b>-- Benny the Baker Blog © 2020 --</b>
+<script src='js/navTabs.js'></script>
+<script src='./tinymce_5.2.0/tinymce/js/tinymce/tinymce.min.js'></script>
+<script src='./tinymce_5.2.0/tinymce/js/tinymce/jquery.tinymce.min.js'></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: '#tinyMCETextArea',
+        body_id: 'mceBody',
+        branding: false,
+        elementpath: false,
+        height: 500,
+        menubar: "file edit view format insert table view",
+        toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent table forecolor backcolor image link media help',
+        plugins: "help lists textcolor table image link media preview wordcount",
+        table_toolbar: "tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol",
+        browser_spellcheck: true,
+        contextmenu: false
+    });
+</script>
+<script src='js/newPost.js'></script>
+</body>
+</html>
